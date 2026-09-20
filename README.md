@@ -30,5 +30,4 @@
 Создана базовая структура проекта.
 Ссылка на опубликованный проект
 
-GitHub Pages: https://BOENKOMAT.github.io/kr1-html-css-shop/
-
+GitHub Pages:https://boenkomat-mq.github.io/kr1-html-css-shop/
