@@ -374,7 +374,7 @@ a:focus-visible {
 }
 
 header {
-    postion sticky;
-    top 0;
-    z-index 10;
+    postion: sticky;
+    top: 0;
+    z-index: 10;
 }
