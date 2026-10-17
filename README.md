@@ -90,4 +90,4 @@ GitHub Pages:  https://boenkomat-mq.github.io/kr1-html-css-shop/
 ## Автор
 
 ФИО: Назаренко Максим 
-Группа: ЭФБО-14-25
+Группа: ЭФБО-14-253
