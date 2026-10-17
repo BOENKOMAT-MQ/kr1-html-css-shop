@@ -1,63 +1,86 @@
-// ===== Модальное окно =====
-
-// Модальное окно
+// ===== Элементы страницы =====
 const orderDialog = document.getElementById('order-dialog');
-
-// Все кнопки «Заказать»
-const orderButtons = document.querySelectorAll('.product-card__button');
-
-// Кнопка «Закрыть»
-const closeDialogButton = document.getElementById('close-order-dialog');
-
-// Скрытое поле для выбранного товара
-const selectedProductInput = document.getElementById('selected-product');
-
-// По клику на «Заказать» записываем товар в скрытое поле и открываем окно
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const productName = button.dataset.product;
-    selectedProductInput.value = productName;
-    orderDialog.showModal();
-  });
-});
-
-// Закрытие окна
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-
-// ===== Обработка формы =====
-
 const orderForm = document.getElementById('order-form');
 const successMessage = document.getElementById('success-message');
+const selectedProductInput = document.getElementById('selected-product');
 
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем настоящую отправку (backend пока не подключён)
-  event.preventDefault();
+let messageTimer;
 
-  // Сбрасываем прошлые пометки ошибок
-  const formElements = Array.from(orderForm.elements);
-
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
-    }
-  });
-
-  // Проверяем форму
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
-    });
-
-    orderForm.reportValidity();
+// Убираем красные рамки ошибок
+function clearErrors() {
+  if (!orderForm) {
     return;
   }
 
-  // Успех: показываем сообщение, очищаем форму, закрываем окно
-  successMessage.hidden = false;
-  orderForm.reset();
-  orderDialog.close();
-});
+  Array.from(orderForm.elements).forEach((element) => {
+    element.removeAttribute('aria-invalid');
+  });
+}
+
+// ===== Модальное окно (есть только на index.html) =====
+if (orderDialog) {
+  // «Заказать»: записываем товар в скрытое поле и открываем окно
+  document.querySelectorAll('.product-card__button').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (selectedProductInput) {
+        selectedProductInput.value = button.dataset.product;
+      }
+      orderDialog.showModal();
+    });
+  });
+
+  // Закрытие: кнопка «Закрыть», крестик (data-close-dialog) или клик по тёмному фону
+  orderDialog.addEventListener('click', (event) => {
+    const isCloseButton = event.target.closest('[data-close-dialog]');
+    const isBackdrop = event.target === orderDialog;
+
+    if (isCloseButton || isBackdrop) {
+      orderDialog.close();
+    }
+  });
+
+  // При любом закрытии (в том числе клавишей Esc) очищаем форму
+  orderDialog.addEventListener('close', () => {
+    if (orderForm) {
+      orderForm.reset();
+    }
+    clearErrors();
+  });
+}
+
+// ===== Обработка формы (index.html и order.html) =====
+if (orderForm) {
+  orderForm.addEventListener('submit', (event) => {
+    // Отменяем настоящую отправку (backend пока не подключён)
+    event.preventDefault();
+
+    clearErrors();
+
+    // Проверяем форму и подсвечиваем ошибочные поля
+    if (!orderForm.checkValidity()) {
+      Array.from(orderForm.elements).forEach((element) => {
+        if (element.willValidate && !element.checkValidity()) {
+          element.setAttribute('aria-invalid', 'true');
+        }
+      });
+
+      orderForm.reportValidity();
+      return;
+    }
+
+    // Успех: очищаем форму, закрываем окно, показываем уведомление на 4 секунды
+    orderForm.reset();
+
+    if (orderDialog) {
+      orderDialog.close();
+    }
+
+    if (successMessage) {
+      successMessage.hidden = false;
+      clearTimeout(messageTimer);
+      messageTimer = setTimeout(() => {
+        successMessage.hidden = true;
+      }, 4000);
+    }
+  });
+}
