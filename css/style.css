@@ -130,13 +130,12 @@ a:focus-visible {
   margin: 0 auto;
 }
 
-.site-logo {
+.site-header__logo { /* Переименовали */
   font-weight: bold;
   text-decoration: none;
   color: var(--color-text);
 }
 
-/* Меню на Flexbox */
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
@@ -148,7 +147,8 @@ a:focus-visible {
   list-style: none;
 }
 
-.site-nav__list a {
+/* Убрали вложенность, добавили класс для ссылки */
+.site-nav__link {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
@@ -156,12 +156,17 @@ a:focus-visible {
   border-radius: var(--radius-sm);
 }
 
-.site-nav__list a:hover {
+.site-nav__link:hover {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
 
-/* Хлебные крошки */
+/* Добавим модификатор для активной ссылки (если нужно) */
+.site-nav__link--active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
 .breadcrumbs {
   max-width: var(--container-width);
   margin: 0 auto var(--space-md);
@@ -169,15 +174,14 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-.breadcrumbs a {
+.breadcrumbs__link {
   color: var(--color-primary);
 }
 
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
   content: " / ";
   color: var(--color-muted);
 }
-
 /* Первый экран */
 .hero {
   max-width: var(--container-width);
@@ -205,6 +209,7 @@ a:focus-visible {
 }
 
 /* Карточка товара (внутри — Flexbox) */
+/* Сам блок остается без изменений */
 .product-card {
   display: flex;
   flex-direction: column;
@@ -220,15 +225,16 @@ a:focus-visible {
   border-color: var(--color-primary);
 }
 
-.product-card h3 {
+/* Элемент: заголовок карточки */
+.product-card__title {
   margin-top: 0;
 }
 
-.product-card .button {
+/* Элемент: кнопка внутри карточки */
+.product-card__button {
   margin-top: auto;
   align-self: flex-start;
 }
-
 /* Дополнительный блок */
 .aside-info {
   max-width: var(--container-width);
