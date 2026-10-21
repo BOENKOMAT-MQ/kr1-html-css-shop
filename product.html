@@ -53,35 +53,136 @@
     </article>
 
     <section class="section">
-      <table class="product-table">
-        <caption class="product-table__caption">Характеристики товара</caption>
-        <thead>
-          <tr>
-            <th class="product-table__head">Параметр</th>
-            <th class="product-table__head">Значение</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="product-table__cell">Категория</td>
-            <td class="product-table__cell">Учебный товар</td>
-          </tr>
-          <tr>
-            <td class="product-table__cell">Цена</td>
-            <td class="product-table__cell">1000 руб.</td>
-          </tr>
-          <tr>
-            <td class="product-table__cell">Наличие</td>
-            <td class="product-table__cell">В наличии</td>
-          </tr>
-          <tr>
-            <td class="product-table__cell">Гарантия</td>
-            <td class="product-table__cell">12 месяцев</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+  <table class="product-table">
+    <caption class="product-table__caption">
+      Характеристики товара
+    </caption>
+    <thead>
+      <tr>
+        <th class="product-table__head">Параметр</th>
+        <th class="product-table__head">Значение</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="product-table__cell">Артикул</td>
+        <td class="product-table__cell">PR-001</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Категория</td>
+        <td class="product-table__cell">Учебный товар</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Цена</td>
+        <td class="product-table__cell">1000 руб.</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Материал</td>
+        <td class="product-table__cell">Комбинированный</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Цвет</td>
+        <td class="product-table__cell">Белый</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Вес</td>
+        <td class="product-table__cell">500 г</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Наличие</td>
+        <td class="product-table__cell">В наличии</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Гарантия</td>
+        <td class="product-table__cell">12 месяцев</td>
+      </tr>
+      <tr>
+        <td class="product-table__cell">Доставка</td>
+        <td class="product-table__cell">По адресу покупателя</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="section reviews" id="reviews">
+  <h2 class="section__title">Отзывы покупателей</h2>
+
+  <article class="review">
+    <div class="review__header">
+      <h3 class="review__author">Александр</h3>
+      <span class="review__rating" aria-label="Оценка 5 из 5">
+        ★★★★★
+      </span>
+    </div>
+    <p class="review__date">15 октября 2026</p>
+    <p class="review__text">
+      Хороший товар. Описание понятное, покупкой доволен.
+    </p>
+  </article>
+
+  <article class="review">
+    <div class="review__header">
+      <h3 class="review__author">Мария</h3>
+      <span class="review__rating" aria-label="Оценка 4 из 5">
+        ★★★★☆
+      </span>
+    </div>
+    <p class="review__date">18 октября 2026</p>
+    <p class="review__text">
+      Товар соответствует описанию. Всё устроило.
+    </p>
+  </article>
+
+  <div class="review-form">
+    <h3>Оставить отзыв</h3>
+
+    <form action="#" method="get">
+      <label class="review-form__label" for="review-name">
+        Ваше имя
+      </label>
+      <input
+        class="review-form__input"
+        id="review-name"
+        name="name"
+        type="text"
+        placeholder="Введите имя"
+        required
+      >
+
+      <label class="review-form__label" for="review-rating">
+        Оценка
+      </label>
+      <select
+        class="review-form__input"
+        id="review-rating"
+        name="rating"
+        required
+      >
+        <option value="5">5 — Отлично</option>
+        <option value="4">4 — Хорошо</option>
+        <option value="3">3 — Нормально</option>
+        <option value="2">2 — Плохо</option>
+        <option value="1">1 — Очень плохо</option>
+      </select>
+
+      <label class="review-form__label" for="review-text">
+        Текст отзыва
+      </label>
+      <textarea
+        class="review-form__input"
+        id="review-text"
+        name="review"
+        rows="4"
+        placeholder="Напишите свой отзыв"
+        required
+      ></textarea>
+
+      <button class="button button--primary" type="submit">
+        Отправить отзыв
+      </button>
+    </form>
+  </div>
+</section>
+</main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
