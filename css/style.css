@@ -659,3 +659,135 @@ px;
   color: var(--color-white);
   background-color: var(--color-primary-dark);
 }
+/* ===============================
+   Дополнительные функции:
+   отзывы, категории, липкие фильтры
+   =============================== */
+
+/* № 11. Закреплённая панель фильтров */
+.catalog-filters {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* № 6. Блок отзывов */
+.reviews {
+  margin-top: var(--space-xl);
+}
+
+.review {
+  margin-bottom: var(--space-md);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.review__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.review__author {
+  margin: 0;
+  font-size: 18px;
+}
+
+.review__rating {
+  color: #e6a000;
+  letter-spacing: 2px;
+}
+
+.review__date {
+  margin: var(--space-xs) 0;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.review__text {
+  margin-bottom: 0;
+}
+
+.review-form {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.review-form__label {
+  display: block;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  font-weight: bold;
+}
+
+.review-form__input {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-md);
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+.review-form__input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* № 4. Карточки категорий */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.category-card__title {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.category-card__text {
+  flex: 1;
+}
+
+.category-card .button {
+  margin-top: var(--space-sm);
+}
+
+/* Адаптация для телефонов и планшетов */
+max-width: 768px {
+  .catalog-filters {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-form,
+  .review {
+    padding: var(--space-md);
+  }
+}
