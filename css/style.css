@@ -801,3 +801,62 @@ max-width: 768px {
   margin: 0 auto 16px;
   border-radius: 8px;
 }
+/* Карточка товара: изображение слева, описание справа */
+.product-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 40px;
+  margin: 30px 0 40px;
+}
+.product-page__gallery {
+  width: 100%;
+  min-width: 0;
+}
+.product-page__image {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+.product-page__info {
+  min-width: 0;
+  padding: 10px 0;
+}
+.product-page__title {
+  margin: 0 0 20px;
+}
+.product-page__price {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+.product-page__description {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.product-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+/* Для телефонов и узких экранов */
+max-width: 700px {
+  .product-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .product-page__image {
+    height: auto;
+    max-height: 360px;
+  }
+  .product-page__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
