@@ -7,11 +7,10 @@
   <title>Категории товаров — ShopProject</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
-
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -34,19 +33,22 @@
       </nav>
     </div>
   </header>
-
   <main class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Категории</span>
     </nav>
-
     <section class="section">
       <h1 class="section__title">Категории товаров</h1>
       <p>Выберите интересующую вас категорию.</p>
-
       <div class="category-grid">
+        <!-- Все товары -->
         <article class="category-card">
+          <img
+            class="category-card__image"
+            src="images/image%201.jpg"
+            alt="Все товары — смартфон"
+          >
           <h2 class="category-card__title">Все товары</h2>
           <p class="category-card__text">
             Полный список товаров нашего магазина.
@@ -54,8 +56,13 @@
           <a class="button button--primary"
              href="catalog.html">Открыть каталог</a>
         </article>
-
+        <!-- Популярные товары -->
         <article class="category-card">
+          <img
+            class="category-card__image"
+            src="images/image%202.jpg"
+            alt="Популярные товары"
+          >
           <h2 class="category-card__title">Популярные</h2>
           <p class="category-card__text">
             Товары, отмеченные как популярные.
@@ -63,8 +70,13 @@
           <a class="button button--primary"
              href="catalog.html">Смотреть товары</a>
         </article>
-
+        <!-- Новинки -->
         <article class="category-card">
+          <img
+            class="category-card__image"
+            src="images/image%203.jpg"
+            alt="Новинки магазина"
+          >
           <h2 class="category-card__title">Новинки</h2>
           <p class="category-card__text">
             Новые товары в каталоге.
@@ -75,7 +87,6 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__text">
@@ -86,7 +97,6 @@
       </p>
     </div>
   </footer>
-
   <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>
