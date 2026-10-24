@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Карточка товара учебного интернет-магазина: описание, характеристики и цена.">
-  <title>Товар 1 — Учебный интернет-магазин</title>
+  <meta name="description" content="Карточка товара интернет-магазина: описание, характеристики и цена.">
+  <title>iPhone 18 Duo — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
-
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -25,172 +24,155 @@
       </nav>
     </div>
   </header>
-
   <main class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <span class="breadcrumbs__current">iPhone 18 Duo</span>
     </nav>
-
+    <!-- Фото слева, описание справа -->
     <article class="product-page">
-      <img src="images/image 3.jpg" alt="iphone 18 duo" class="product-card__image">
-           
-
+      <div class="product-page__gallery">
+        <img
+          src="images/image%203.jpg"
+          alt="Смартфон iPhone 18 Duo"
+          class="product-page__image"
+        >
+      </div>
       <div class="product-page__info">
-        <h1 class="product-page__title">iphone 18 duo</h1>
-        <p class="product-page__price">300000 руб.</p>
-        <p>
-          iphone 18 duo на 2 ТБ
+        <h1 class="product-page__title">iPhone 18 Duo</h1>
+        <p class="product-page__price">180 000 руб.</p>
+        <p class="product-page__description">
+          Современный смартфон с большим объёмом памяти 2 ТБ,
+          стильным дизайном и удобным экраном.
         </p>
-
+        <p><strong>Память:</strong> 2 ТБ</p>
+        <p><strong>Цвет:</strong> белый</p>
+        <p><strong>Наличие:</strong> в наличии</p>
         <div class="product-page__actions">
           <a class="button button--primary" href="order.html">Оставить заявку</a>
           <a class="button button--secondary" href="catalog.html">Назад в каталог</a>
         </div>
       </div>
     </article>
-
+    <!-- Характеристики товара -->
     <section class="section">
-  <table class="product-table">
-    <caption class="product-table__caption">
-      Характеристики товара
-    </caption>
-    <thead>
-      <tr>
-        <th class="product-table__head">Параметр</th>
-        <th class="product-table__head">Значение</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="product-table__cell">Артикул</td>
-        <td class="product-table__cell">PR-001</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Категория</td>
-        <td class="product-table__cell">Учебный товар</td>
-      </tr>
-      <tr>
-        <img src="images/image 3.jpg" alt="iphone 18 duo" class="product-card__image">
-        <td class="product-table__cell">Цена</td>
-        <td class="product-table__cell">1000 руб.</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Материал</td>
-        <td class="product-table__cell">Комбинированный</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Цвет</td>
-        <td class="product-table__cell">Белый</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Вес</td>
-        <td class="product-table__cell">500 г</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Наличие</td>
-        <td class="product-table__cell">В наличии</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Гарантия</td>
-        <td class="product-table__cell">12 месяцев</td>
-      </tr>
-      <tr>
-        <td class="product-table__cell">Доставка</td>
-        <td class="product-table__cell">По адресу покупателя</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-<section class="section reviews" id="reviews">
-  <h2 class="section__title">Отзывы покупателей</h2>
+      <table class="product-table">
+        <caption class="product-table__caption">Характеристики товара</caption>
+        <thead>
+          <tr>
+            <th class="product-table__head">Параметр</th>
+            <th class="product-table__head">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-table__cell">Артикул</td>
+            <td class="product-table__cell">PR-001</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Категория</td>
+            <td class="product-table__cell">Смартфоны</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Цена</td>
+            <td class="product-table__cell">180 000 руб.</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Память</td>
+            <td class="product-table__cell">2 ТБ</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Цвет</td>
+            <td class="product-table__cell">Белый</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Наличие</td>
+            <td class="product-table__cell">В наличии</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Гарантия</td>
+            <td class="product-table__cell">12 месяцев</td>
+          </tr>
+          <tr>
 
-  <article class="review">
-    <div class="review__header">
-      <h3 class="review__author">Александр</h3>
-      <span class="review__rating" aria-label="Оценка 5 из 5">
-        ★★★★★
-      </span>
-    </div>
-    <p class="review__date">15 октября 2026</p>
-    <p class="review__text">
-      Хороший товар. Описание понятное, покупкой доволен.
-    </p>
-  </article>
 
-  <article class="review">
-    <div class="review__header">
-      <h3 class="review__author">Мария</h3>
-      <span class="review__rating" aria-label="Оценка 4 из 5">
-        ★★★★☆
-      </span>
-    </div>
-    <p class="review__date">18 октября 2026</p>
-    <p class="review__text">
-      Товар соответствует описанию. Всё устроило.
-    </p>
-  </article>
-
-  <div class="review-form">
-    <h3>Оставить отзыв</h3>
-
-    <form action="#" method="get">
-      <label class="review-form__label" for="review-name">
-        Ваше имя
-      </label>
-      <input
-        class="review-form__input"
-        id="review-name"
-        name="name"
-        type="text"
-        placeholder="Введите имя"
-        required
-      >
-
-      <label class="review-form__label" for="review-rating">
-        Оценка
-      </label>
-      <select
-        class="review-form__input"
-        id="review-rating"
-        name="rating"
-        required
-      >
-        <option value="5">5 — Отлично</option>
-        <option value="4">4 — Хорошо</option>
-        <option value="3">3 — Нормально</option>
-        <option value="2">2 — Плохо</option>
-        <option value="1">1 — Очень плохо</option>
-      </select>
-
-      <label class="review-form__label" for="review-text">
-        Текст отзыва
-      </label>
-      <textarea
-        class="review-form__input"
-        id="review-text"
-        name="review"
-        rows="4"
-        placeholder="Напишите свой отзыв"
-        required
-      ></textarea>
-
-      <button class="button button--primary" type="submit">
-        Отправить отзыв
-      </button>
-    </form>
-  </div>
-</section>
-</main>
-
+<td class="product-table__cell">Доставка</td>
+            <td class="product-table__cell">По адресу покупателя</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- Отзывы покупателей -->
+    <section class="section reviews" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <article class="review">
+        <div class="review__header">
+          <h3 class="review__author">Александр</h3>
+          <span class="review__rating" aria-label="Оценка 5 из 5">★★★★★</span>
+        </div>
+        <p class="review__date">15 октября 2026</p>
+        <p class="review__text">
+          Хороший товар. Описание понятное, покупкой доволен.
+        </p>
+      </article>
+      <article class="review">
+        <div class="review__header">
+          <h3 class="review__author">Мария</h3>
+          <span class="review__rating" aria-label="Оценка 4 из 5">★★★★☆</span>
+        </div>
+        <p class="review__date">18 октября 2026</p>
+        <p class="review__text">
+          Товар соответствует описанию. Всё устроило.
+        </p>
+      </article>
+      <div class="review-form">
+        <h3>Оставить отзыв</h3>
+        <form action="#" method="get">
+          <label class="review-form__label" for="review-name">Ваше имя</label>
+          <input
+            class="review-form__input"
+            id="review-name"
+            name="name"
+            type="text"
+            placeholder="Введите имя"
+            required
+          >
+          <label class="review-form__label" for="review-rating">Оценка</label>
+          <select
+            class="review-form__input"
+            id="review-rating"
+            name="rating"
+            required
+          >
+            <option value="5">5 — Отлично</option>
+            <option value="4">4 — Хорошо</option>
+            <option value="3">3 — Нормально</option>
+            <option value="2">2 — Плохо</option>
+            <option value="1">1 — Очень плохо</option>
+          </select>
+          <label class="review-form__label" for="review-text">Текст отзыва</label>
+          <textarea
+            class="review-form__input"
+            id="review-text"
+            name="review"
+            rows="4"
+            placeholder="Напишите свой отзыв"
+            required
+          ></textarea>
+          <button class="button button--primary" type="submit">
+            Отправить отзыв
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
       <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
     </div>
   </footer>
-
   <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>
